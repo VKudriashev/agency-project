@@ -1,0 +1,40 @@
+spring:
+  application.name: test-project
+  sql:
+    init:
+      schema-locations: classpath:db/schema.sql
+      data-locations: classpath:db/data.sql
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://127.0.0.1:8180/realms/test_realm
+      client:
+        registration:
+          keycloak:
+            client-id: test_client
+            client-secret: 8632GkhMFx2kiGNTtuNjQxNZ2xGOuCJM
+            scope: openid
+            authorization-grant-type: authorization_code
+        provider:
+          keycloak:
+            issuer-uri: http://127.0.0.1:8180/realms/test_realm
+            user-name-attribute: preferred_username
+
+keycloak:
+  auth-server-url: http://127.0.0.1:8180/auth
+  realm: test_realm
+  #username: admin
+  #password: keycloak
+# logging:
+#  level:
+#    org.springframework.security: TRACE
+
+console:
+  request:
+    token-url: http://127.0.0.1:8180/realms/test_realm/protocol/openid-connect/token
+    patients-url: http://127.0.0.1:8080/patients
+    username: practitioner
+    password: practPass
+    grant-type: password

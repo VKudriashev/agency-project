@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div>
+    <table th:border="1">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Birth date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="patient : ${patients}">
+            <td th:text="${patient.id}">Text ...</td>
+            <td th:text="${patient.name}">Text ...</td>
+            <td th:text="${patient.gender}">Text ...</td>
+            <td th:text="${patient.birthDate}">Text...</td>
+        </tr>
+        </tbody>
+    </table>
+    <p><a th:href="@{/logout}">Logout</a></p>
+</div>
+</body>
+</html>
