@@ -17,9 +17,9 @@ and "Patient"(with "ROLE_PATIENT" role assignment) users in Keycloak. You can do
 
 ---
 
-**User with "Practitioner" role:**
+**User with "Patient" role:**
 
-**Username:** practitioner; **Password:** practPass
+**Username:** patient; **Password:** patPass
 
 Access to: 
 
@@ -29,9 +29,9 @@ Access to:
 
 ---
 
-**User with "Patient" role:**
+**User with "Practitioner" role:**
 
-**Username:** Patient; **Password:** patPass
+**Username:** practitioner; **Password:** practPass
 
 Access to:
 
